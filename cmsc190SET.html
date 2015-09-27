@@ -1,0 +1,40 @@
+<head>
+  <title>Custom User Accounts Tutorial</title>
+</head>
+
+<body>
+    {{#if currentUser}}
+        {{> dashboard}}
+    {{else}}
+        {{> register}}
+        {{> login}}
+    {{/if}}
+</body>
+
+<template name="register">
+    <form>
+	
+        <input type="email" name="registerEmail" class="registerEmail">
+        <input type="password" name="registerPassword" class="registerPassword">
+        <input type="submit" value="Register">
+	
+    </form>
+</template>
+
+<template name="login">
+    <form>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<div class="logo">Student Evaluation of Teachers</div>
+	<div class="login-block">
+        <input type="email" name="loginEmail" id="loginEmail">
+        <input type="password" name="loginPassword" id="loginPassword">
+        <input type="submit" value="Login">
+	</div>
+    </form>
+</template>
+
+
+<template name="dashboard">
+    <p>You're logged in.</p>
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
